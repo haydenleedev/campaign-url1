@@ -32,7 +32,12 @@
   crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto+Mono|Roboto+Slab" rel="stylesheet" type="text/css" />
 
+<<<<<<< HEAD
 <link href="../url2/ujet_url2_bundle.css" rel="stylesheet"></head>
+=======
+<link type="text/css" href="ujet_url2_bundle.css" rel="stylesheet">
+      </head>
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
 <body class="loading UJET-menu-push">
  
 <div id="outer-wrap" class="outer-frame l-full-width-small" role="document">
@@ -55,7 +60,11 @@
 <div class="l-full-width">
 <article id="main-content" class="l-site-width splash-theme-padding">
   <h1 class="text-32px text-300 mb-30px l-align-center">UJET UTM Parameter Generator </h1> 
+<<<<<<< HEAD
   <p>All of the entered input values are automatically recorded to the data as an archive. Please keep in mind that the recording occurs when you copy the url from the generated url field such as "facebook", "likedin", or "Campaign URL" field.</p>
+=======
+          <p>All of the entered input values are automatically recorded to the data as an archive. Please keep in mind that the recording occurs when you copy the url from the generated url field such as "facebook", "likedin", or "Campaign URL" field.</p>
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
 
   <section class="bg-f6f6f6 l-site-width" id="section1">
     <div class="p-30px">
@@ -127,7 +136,7 @@
                 <option value="Webinar_UJET">Webinar_UJET</option>
                 <option value="Website">Website</option>
         </datalist>
-        <span class="small-text3 text-12px block">Please select MKTG for all Marketo related web pages</span>
+       
     </div>
 -->
 
@@ -340,7 +349,10 @@
                     <option value="SALES">SALES</option>
                     <option value="CSM">CSM</option>
             </datalist>
+<<<<<<< HEAD
           
+=======
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
         </div>
         
     </div>
@@ -377,7 +389,10 @@
                 <option value="Webinar_UJET">Webinar_UJET</option>
                 <option value="Website">Website</option>
         </datalist>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
     </div>
 
     <div class="form-full l-clearfix">
@@ -438,7 +453,195 @@
 </div>
 </section>
   
+<<<<<<< HEAD
                                                                                                                                     
+=======
+<script type="text/javascript"> 
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwja_tNMkakgHrHPsZqTPWSb06w2tZWN-cHnjSzoyA4ZBSFIq6Ewk0xFQ/exec';
+const formSocial = document.forms['url-parameters'];
+const enteredURL = document.getElementById("website_url");
+let pageURL = document.getElementById("page-url");
+
+const enteredURLAd = document.getElementById("website_url_ad");
+let pageURLAd = document.getElementById("page-url-ad");
+
+const facebookSource = document.getElementById("ca-campaign-fa");
+const linkedinSource = document.getElementById("ca-campaign-li");
+const twitterSource = document.getElementById("ca-campaign-tw");
+const youtubeSource = document.getElementById("ca-campaign-yu");
+let caSource = document.getElementById("ca-source");
+let caMedium = document.getElementById("ca-medium");
+let assetPurpose = document.getElementById("Asset_Purpose");
+let currentLeadProgram = document.getElementById("ca-clp2");
+let currentLeadSource = document.getElementById("ca-cls2");
+const facebokFinal = document.getElementById("facebook-result-final");
+const linkedinFinal = document.getElementById("linkedin-result-final");
+const twitterFinal = document.getElementById("twitter-result-final");
+const youtubeFinal = document.getElementById("youtube-result-final");
+
+const formAd = document.forms['ad-form'];
+const googleAdFinal = document.getElementById("google-ad-result-final");
+const linkedinAdFinal = document.getElementById("linkedin-ad-result-final");
+let caSourceAd = document.getElementById("ca-source-ad");
+let caMediumAd = document.getElementById("ca-medium-ad");
+let assetPurposeAd = document.getElementById("Asset_Purpose-ad");
+const linkedinAdSource = document.getElementById("ca-campaign-li-ad");
+const googleAdSource = document.getElementById("ca-campaign-go-ad");
+
+let campaignURL = document.getElementById("ca-url");
+let campaignURLAd = document.getElementById("ca-url-ad");
+let currentLeadSourceAd = document.getElementById("ca-cls-ad");
+let currentLeadProgramAd = document.getElementById("ca-clp-ad");
+
+const form = document.forms['url-parameters2'];
+const urlFinal2 = document.querySelector("#url-result-final");
+
+function copyUrl(url) {
+  let hasTextCopied = url.querySelector(".text-copied") != null;
+  if (!hasTextCopied) {
+    let span = document.createElement("span");
+    span.className = "text-copied";
+    span.innerText = "The url is recorded successfully.";
+    url.appendChild(span);
+  }
+}
+
+facebokFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURL.value = enteredURL.value;
+    e.target.classList.add("valid");
+    caSource.value = "facebook";
+    caMedium.value = "social";
+    currentLeadProgram.value = "Social_Media";
+    currentLeadSource.value = "MKTG";
+    assetPurpose.value = " - Social - Facebook";
+    campaignURL.value = facebokFinal.value;
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+      fetch(scriptURL, { method: 'POST', body: new FormData(formSocial)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    }
+    copyUrl(e.target.parentNode);
+  })
+linkedinFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURL.value = enteredURL.value;
+    e.target.classList.add("valid");
+    caSource.value = "linkedin";
+    caMedium.value = "social";
+    currentLeadProgram.value = "Social_Media";
+    currentLeadSource.value = "MKTG";
+    assetPurpose.value = " - Social - Linkedin";
+    campaignURL.value = linkedinFinal.value;
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(formSocial)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+      }
+        copyUrl(e.target.parentNode);
+    
+})
+twitterFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURL.value = enteredURL.value;
+    e.target.classList.add("valid");
+    caSource.value = "twitter";
+    caMedium.value = "social";
+    currentLeadProgram.value = "Social_Media";
+    currentLeadSource.value = "MKTG";
+    assetPurpose.value = " - Social - Twitter";
+    campaignURL.value = twitterFinal.value;
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(formSocial)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    }
+        copyUrl(e.target.parentNode);
+})
+youtubeFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURL.value = enteredURL.value;
+    e.target.classList.add("valid");
+    caSource.value = "youtube";
+    caMedium.value = "social";
+    currentLeadProgram.value = "Social_Media";
+    currentLeadSource.value = "MKTG";
+    assetPurpose.value = " - Social - YouTube";
+    campaignURL.value = youtubeFinal.value;
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(formSocial)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    }
+        copyUrl(e.target.parentNode);
+})
+
+googleAdFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURLAd.value = enteredURLAd.value;
+    e.target.classList.add("valid");  
+    caMediumAd.value = "cpc";
+    caSourceAd.value = "google";
+    assetPurposeAd.value = " - Dig Adv - Google";
+    campaignURLAd.value = googleAdFinal.value;
+    currentLeadSourceAd.value = "MKTG";
+    currentLeadProgramAd.value = "Digital_Adv";
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(formAd)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+      }
+        copyUrl(e.target.parentNode);
+    
+})
+linkedinAdFinal.addEventListener('click', e => {
+    e.preventDefault();
+    pageURLAd.value = enteredURLAd.value;
+    e.target.classList.add("valid");
+    caMediumAd.value = "cpc";
+    caSourceAd.value = "linkedin";
+    assetPurposeAd.value = " - Dig Adv - LinkedIn";
+    campaignURLAd.value = linkedinAdFinal.value;
+    currentLeadSourceAd.value = "MKTG";
+    currentLeadProgramAd.value = "Digital_Adv";
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(formAd)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+      }
+        copyUrl(e.target.parentNode);
+})
+
+urlFinal2.addEventListener('click', e => {
+    e.preventDefault()
+    e.target.classList.add("valid");
+    let hasTextCopied = e.target.parentNode.querySelector(".text-copied") != null;
+    if (!hasTextCopied) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    }
+      copyUrl(e.target.parentNode);
+  });
+
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 50
+    }, 500);
+});
+
+</script>                                                                                                                                       
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
                      
                       
 </article>
@@ -454,5 +657,10 @@
 
 
 
+<<<<<<< HEAD
 <script type="text/javascript" src="../url2/url2.bundle.939d396d9be1dc8497b4.js"></script></body>
 </html>
+=======
+<script type="text/javascript" src="url2.bundle.5b0bdde98869dada2a63.js"></script></body>
+</html>
+>>>>>>> 73b4a23742e76176f0b0f41d4c1913901021b455
